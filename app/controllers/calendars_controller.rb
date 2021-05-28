@@ -31,18 +31,18 @@ class CalendarsController < ApplicationController
 
     7.times do |x|
       today_plans = []
-      plan.each do |plan|
+      plans.each do |plan|
         today_plans.push(plan.plan) if plan.date == @todays_date + x
       end
 
 
-      wdy_num = Date.today.wday+x
+      wday_num = Date.today.wday+x
       if wday_num>= 7
         wday_num = wday_num -7
       end
 
 
-      days = { month:(@todays_date + X).month, date:(@todays_date + x).day, plans:today_plans, wday: wdays[wday_num]}
+      days = { month:(@todays_date + x).month, date:(@todays_date + x).day, plans:today_plans, wday: wdays[wday_num]}
 
 
      
